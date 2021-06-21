@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Form from './Form';
 import Result from './Result';
+import '../design/Main.scss';
 
 const Main = () => {
   const [count, setCount] = useState('');

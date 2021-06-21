@@ -1,15 +1,15 @@
 import React from 'react';
 import JSONPretty from 'react-json-pretty';
-
+import '../design/Result.scss';
 const Result = props => {
-  let headers = { headers: props.data.headers };
-  let count = { count: props.data.count };
-  let results = { results: props.data.results };
   return (
     <div className='result'>
-      <JSONPretty data={headers} />
-      <JSONPretty data={count} />
-      <JSONPretty data={results} />
+      "headers:"
+      <JSONPretty data={props.data.headers} />
+      "count:"
+      <JSONPretty data={props.data.count} />
+      "results"
+      <JSONPretty data={props.data.result} />
     </div>
   );
 };

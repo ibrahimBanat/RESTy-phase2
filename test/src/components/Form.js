@@ -1,5 +1,6 @@
 import React, { useState, setState } from 'react';
 import axios from 'axios';
+import '../design/Form.scss';
 
 const Form = props => {
   const [option, setOption] = useState('GET');
@@ -8,12 +9,11 @@ const Form = props => {
 
   const handleSubmit = async e => {
     e.preventDefault();
+
     let response = await axios({
       method: option,
       url: url,
     });
-    console.log(response);
-    // setResponse(response.request.response);
     props.afterSubmit(response.headers, response.request.response);
   };
   return (
