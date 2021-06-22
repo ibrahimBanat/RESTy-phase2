@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# RESTy 2
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+RESTy Phase 2: Connect RESTy with APIs, running live requests
 
-## Available Scripts
+## Requirements
 
-In the project directory, you can run:
+In phase 2, we will be connecting RESTy to live APIs, fetching and displaying remote data. Our primary focus will be to service GET requests
 
-### `npm start`
+## Application Flow
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- User enters an API URL
+- Chooses a REST Method
+- Clicks the “Go” button
+- Application fetches data from the URL given, with the - method specified
+- Displays the response headers and results separately
+- Both headers and results should be “pretty printed” JSON
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Hierarchy
 
-### `npm test`
+Suggested Component Hierarchy and Application Architecture:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- `index.js` - Entry Point
+- `app.js` - Container
 
-### `npm run build`
+  - Holds state: Count and Results Array
+  - A class method that can update state
+  - Renders 2 Child Components
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- `<Form />`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  - Expects a function to be sent to it as a prop
+    Renders a URL entry form.
+  - A selection of REST methods to choose from (“get” should be the default)
+  - On submit
+    - A selection of REST methods to choose from (“get” should be the default)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- `<Results />`
 
-### `npm run eject`
+  - Expects the count, headers, results to be sent in as props
+  - Renders the count
+  - Renders the Result Headers as “pretty” JSON
+  - Renders the Result Body as “pretty” JSON
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## UML
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![resty2](./public/assets/resty2.png)
