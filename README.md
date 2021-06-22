@@ -1,6 +1,7 @@
 # RESTy 2
 
 RESTy Phase 2: Connect RESTy with APIs, running live requests
+you can find the deployment [here](https://ibrahimbanat.github.io/RESTy-phase2/)
 
 ## Requirements
 
